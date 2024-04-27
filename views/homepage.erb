@@ -1,3 +1,8 @@
 <h1> Howdy! </h1>
 
-<%= @parsed_response %>
+<ul>
+<%= @currencies.keys.each do |symbol| %>
+
+  <li> <%= symbol %> </li>
+<%= end %>
+</ul>

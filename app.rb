@@ -11,5 +11,6 @@ get("/") do
   @parsed_response = JSON.parse(@string_response)
 
   @currencies = @parsed_response.fetch("currencies")
+  
   erb(:homepage)
 end

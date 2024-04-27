@@ -1,8 +1,10 @@
 <h1> Howdy! </h1>
 
 <ul>
-<%= @currencies.keys.each do |symbol| %>
+  <% @currencies.keys.each do |symbol| %>
 
-  <li> <%= symbol %> </li>
-<%= end %>
+    <li>
+      <a href=""> Convert 1  <%= symbol %> ... </a>
+    </li>
+  <% end %>
 </ul>

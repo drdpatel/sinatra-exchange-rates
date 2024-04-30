@@ -15,9 +15,9 @@ get("/") do
   erb(:homepage)
 end
 
-get("/:first_symbol") do
+get("/:from_currency") do
 
-@the_symbol = params.fetch("first_symbol")
+@the_symbol = params.fetch("from_currency")
 
 @raw_response = HTTP.get("https://api.exchangerate.host/list?access_key=#{ENV.fetch("EXCHANGE_RATE_KEY")}")
 
@@ -28,5 +28,12 @@ get("/:first_symbol") do
   @currencies = @parsed_response.fetch("currencies")
   
 erb(:one)
+end
 
+get("/:from_currency/:to_currency") do
+
+  @from = params.fetch("from_currency")
+  @to = params.fetch("to_currency")
+
+  erb(:step_two)
 end
